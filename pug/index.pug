@@ -1,12 +1,17 @@
 doctype html
 html(lang='ja')
-    head
-        meta(charset="utf-8")
-        title タイトル
-        link(href="/css/style.css", rel="stylesheet")
-    body
-        div#header
-        div#navigation
-        div#content
-            h1 helloWorld!
-        div#footer
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no")
+    meta(name="Keywords", content="")
+    meta(name="Description", content="")
+    title タイトル
+    link(href="/css/reset.css", rel="stylesheet")
+    link(href="/css/style.css", rel="stylesheet", media="all")
+    link(href="/css/style_pc.css", rel="stylesheet", media="screen and (min-width:641px)")
+    link(href="/css/style_sp.css", rel="stylesheet", media="screen and (max-width:640px)")
+    script(src='/js/index.js')
+  body
+    div
+      h1 hello
