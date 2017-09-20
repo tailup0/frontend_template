@@ -19,7 +19,7 @@ gulp.task('watch', () => {
     gulp.watch(['./pug/**'], () => {
         gulp.start(['pug']);
     });
-    gulp.watch(['./js_/index.js'], () => {
+    gulp.watch(['./js_/**'], () => {
         gulp.start(['beautify']);
     });
 });
@@ -59,7 +59,7 @@ gulp.task("pug", () => {
         indent_char: "\t",
         indent_size: 1
     }
-    gulp.src("./pug/**/*.pug")
+    gulp.src(["./pug/**/*.pug", '!./pug/**/_*.pug'])
         .pipe(plumber({
             errorHandler: notify.onError("Error: <%= error.message %>")
         }))
@@ -73,7 +73,7 @@ gulp.task("beautify", () => {
         indent_size: 1,
         indent_with_tabs: true
     }
-    gulp.src("./js_/index.js")
+    gulp.src("./js_/**/*.js")
         .pipe(plumber({
             errorHandler: notify.onError("Error: <%= error.message %>")
         }))
