@@ -57,7 +57,8 @@ gulp.task("pug", () => {
     }
     var prtOpt = {
         indent_char: "\t",
-        indent_size: 1
+        indent_size: 1,
+        unformatted: ['br','inline'],
     }
     gulp.src(["./pug/**/*.pug", '!./pug/**/_*.pug'])
         .pipe(plumber({
