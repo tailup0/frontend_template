@@ -1,0 +1,40 @@
+/*
+ * CSS style_sp.css
+ */
+/* ---------------------------------------
+Display Control By Device
+--------------------------------------- */
+.onlyPC{
+	display: none;
+}
+
+.onlySP{
+	display: block;
+}
+
+img.onlyPC{
+	display: none;
+}
+
+img.onlySP{
+	display: inline;
+}
+
+br.onlyPC{
+	display: none;
+}
+
+br.onlySP{
+	display: inline;
+}
+
+/* ---------------------------------------
+.wrapper
+--------------------------------------- */
+.wrapper{
+	min-width: 100%;
+	width: 100%;
+}
+.wrapper .inCnt{
+	width: 100%;
+}

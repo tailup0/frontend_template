@@ -1,6 +1,36 @@
-h1{
-	color: red;
-	&:hover{
-		color: royalblue;
-	}
+@charset "UTF-8";
+
+@import "config";
+/*
+ * CSS style.css
+ */
+
+// @include font-face(#{$font_name_mincho}, '#{$font_path}sampleMincho', 400, normal, woff otf);
+// @include font-face(#{$font_name_gothic}, '#{$font_path}sampleGothic', 400, normal, woff otf);
+
+/* ---------------------------------------
+base
+--------------------------------------- */
+body {
+  font-family:$mincho;
 }
+ul {
+  list-style: none;
+}
+.rowSet{
+  @include grid(left);
+}
+.rowSetRight{
+  @include grid(right);
+}
+
+a{
+  text-decoration: none;
+}
+a:hover{ opacity: 0.8; }
+
+.fadeIn{
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.fadeInDone{ opacity: 1.0; }

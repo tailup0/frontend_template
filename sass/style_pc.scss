@@ -1,0 +1,34 @@
+@import "config";
+
+$ratio: 1;
+$realWidth: 1920;
+@function ratioPx($value) {
+  @return px($value*$ratio);
+}
+@function ratioPer($value) {
+  @return per($value/$realWidth);
+}
+
+/*
+ * CSS style_pc.css
+ */
+/* ---------------------------------------
+Display Control By Device
+--------------------------------------- */
+.onlyPC{ display: block; }
+.onlySP{ display: none; }
+img.onlyPC{ display: inline; }
+img.onlySP{ display: none; }
+br.onlyPC{ display: inline; }
+br.onlySP{ display: none; }
+
+/* ---------------------------------------
+wrapper
+--------------------------------------- */
+.wrapper{
+  min-width: px($pcContentWidth);
+  .inCnt{
+    width: px($pcContentWidth);
+    margin: 0 auto;
+  }
+}

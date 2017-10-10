@@ -1,0 +1,58 @@
+$font_path: "../fonts/";
+$font_name_mincho: 'sampleMincho';
+$font_name_gothic: 'sampleGothic';
+
+$mincho: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "MS P明朝", "MS PMincho", "MS 明朝", serif;
+$gothic: "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","MS Pゴシック", sans-serif;
+// $mincho:"#{$font_name_mincho}", "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "MS P明朝", "MS PMincho", "MS 明朝", serif;
+// $gothic:"#{$font_name_gothic}", "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","MS Pゴシック", sans-serif;
+
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: otf ttf woff woff2) {
+  $src: null;
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype",
+    woff: "woff",
+    woff2: "woff2"
+  );
+
+  @each $ext in $exts {
+    $format: map-get($formats, $ext);
+    $src: append($src, url(quote($path+'.'+$ext)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style:  $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@mixin grid($float){
+  overflow:hidden;
+  &:before,
+  &:after{
+    display:table;
+    content:"";
+  }
+  &:after{ clear:both; }
+  .col{ float: $float; }
+}
+
+@function px($value) {
+  @return 0px + round($value);
+}
+@function per($value) {
+  @return 0% + round($value*10000)/100;
+}
+
+$pcContentWidth:1000;
+
+$imgPath:'../img/';
+
+$bg01: '#{$imgPath}bg01.jpg';
+
+$color01: #FFFFFF;
